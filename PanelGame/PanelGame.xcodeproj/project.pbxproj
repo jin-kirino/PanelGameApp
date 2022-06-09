@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FF7CC6852850D31600E66C57 /* PanelGame_swiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CC6842850D31600E66C57 /* PanelGame_swiftApp.swift */; };
-		FF7CC6872850D31600E66C57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CC6862850D31600E66C57 /* ContentView.swift */; };
-		FF7CC6892850D31900E66C57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7CC6882850D31900E66C57 /* Assets.xcassets */; };
-		FF7CC68C2850D31900E66C57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7CC68B2850D31900E66C57 /* Preview Assets.xcassets */; };
+		FF7CC6D42852286900E66C57 /* PanelGameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CC6D32852286900E66C57 /* PanelGameApp.swift */; };
+		FF7CC6D62852286900E66C57 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CC6D52852286900E66C57 /* ContentView.swift */; };
+		FF7CC6D82852286B00E66C57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7CC6D72852286B00E66C57 /* Assets.xcassets */; };
+		FF7CC6DB2852286B00E66C57 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF7CC6DA2852286B00E66C57 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FF7CC6812850D31600E66C57 /* PanelGame.swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanelGame.swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FF7CC6842850D31600E66C57 /* PanelGame_swiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelGame_swiftApp.swift; sourceTree = "<group>"; };
-		FF7CC6862850D31600E66C57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FF7CC6882850D31900E66C57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FF7CC68B2850D31900E66C57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF7CC6D02852286900E66C57 /* PanelGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanelGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF7CC6D32852286900E66C57 /* PanelGameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelGameApp.swift; sourceTree = "<group>"; };
+		FF7CC6D52852286900E66C57 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF7CC6D72852286B00E66C57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF7CC6DA2852286B00E66C57 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FF7CC67E2850D31600E66C57 /* Frameworks */ = {
+		FF7CC6CD2852286900E66C57 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -32,37 +32,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FF7CC6782850D31600E66C57 = {
+		FF7CC6C72852286800E66C57 = {
 			isa = PBXGroup;
 			children = (
-				FF7CC6832850D31600E66C57 /* PanelGame.swift */,
-				FF7CC6822850D31600E66C57 /* Products */,
+				FF7CC6D22852286900E66C57 /* PanelGame */,
+				FF7CC6D12852286900E66C57 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FF7CC6822850D31600E66C57 /* Products */ = {
+		FF7CC6D12852286900E66C57 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FF7CC6812850D31600E66C57 /* PanelGame.swift.app */,
+				FF7CC6D02852286900E66C57 /* PanelGame.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FF7CC6832850D31600E66C57 /* PanelGame.swift */ = {
+		FF7CC6D22852286900E66C57 /* PanelGame */ = {
 			isa = PBXGroup;
 			children = (
-				FF7CC6842850D31600E66C57 /* PanelGame_swiftApp.swift */,
-				FF7CC6862850D31600E66C57 /* ContentView.swift */,
-				FF7CC6882850D31900E66C57 /* Assets.xcassets */,
-				FF7CC68A2850D31900E66C57 /* Preview Content */,
+				FF7CC6D32852286900E66C57 /* PanelGameApp.swift */,
+				FF7CC6D52852286900E66C57 /* ContentView.swift */,
+				FF7CC6D72852286B00E66C57 /* Assets.xcassets */,
+				FF7CC6D92852286B00E66C57 /* Preview Content */,
 			);
-			path = PanelGame.swift;
+			path = PanelGame;
 			sourceTree = "<group>";
 		};
-		FF7CC68A2850D31900E66C57 /* Preview Content */ = {
+		FF7CC6D92852286B00E66C57 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				FF7CC68B2850D31900E66C57 /* Preview Assets.xcassets */,
+				FF7CC6DA2852286B00E66C57 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -70,40 +70,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FF7CC6802850D31600E66C57 /* PanelGame.swift */ = {
+		FF7CC6CF2852286900E66C57 /* PanelGame */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FF7CC68F2850D31900E66C57 /* Build configuration list for PBXNativeTarget "PanelGame.swift" */;
+			buildConfigurationList = FF7CC6DE2852286B00E66C57 /* Build configuration list for PBXNativeTarget "PanelGame" */;
 			buildPhases = (
-				FF7CC67D2850D31600E66C57 /* Sources */,
-				FF7CC67E2850D31600E66C57 /* Frameworks */,
-				FF7CC67F2850D31600E66C57 /* Resources */,
-				FF7CC6922852132200E66C57 /* ShellScript */,
+				FF7CC6CC2852286900E66C57 /* Sources */,
+				FF7CC6CD2852286900E66C57 /* Frameworks */,
+				FF7CC6CE2852286900E66C57 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PanelGame.swift;
-			productName = PanelGame.swift;
-			productReference = FF7CC6812850D31600E66C57 /* PanelGame.swift.app */;
+			name = PanelGame;
+			productName = PanelGame;
+			productReference = FF7CC6D02852286900E66C57 /* PanelGame.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FF7CC6792850D31600E66C57 /* Project object */ = {
+		FF7CC6C82852286800E66C57 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					FF7CC6802850D31600E66C57 = {
+					FF7CC6CF2852286900E66C57 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
-			buildConfigurationList = FF7CC67C2850D31600E66C57 /* Build configuration list for PBXProject "PanelGame.swift" */;
+			buildConfigurationList = FF7CC6CB2852286800E66C57 /* Build configuration list for PBXProject "PanelGame" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,62 +110,42 @@
 				en,
 				Base,
 			);
-			mainGroup = FF7CC6782850D31600E66C57;
-			productRefGroup = FF7CC6822850D31600E66C57 /* Products */;
+			mainGroup = FF7CC6C72852286800E66C57;
+			productRefGroup = FF7CC6D12852286900E66C57 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FF7CC6802850D31600E66C57 /* PanelGame.swift */,
+				FF7CC6CF2852286900E66C57 /* PanelGame */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FF7CC67F2850D31600E66C57 /* Resources */ = {
+		FF7CC6CE2852286900E66C57 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF7CC68C2850D31900E66C57 /* Preview Assets.xcassets in Resources */,
-				FF7CC6892850D31900E66C57 /* Assets.xcassets in Resources */,
+				FF7CC6DB2852286B00E66C57 /* Preview Assets.xcassets in Resources */,
+				FF7CC6D82852286B00E66C57 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		FF7CC6922852132200E66C57 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint; then\n\n    swiftlint\n\nelse\n\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		FF7CC67D2850D31600E66C57 /* Sources */ = {
+		FF7CC6CC2852286900E66C57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF7CC6872850D31600E66C57 /* ContentView.swift in Sources */,
-				FF7CC6852850D31600E66C57 /* PanelGame_swiftApp.swift in Sources */,
+				FF7CC6D62852286900E66C57 /* ContentView.swift in Sources */,
+				FF7CC6D42852286900E66C57 /* PanelGameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		FF7CC68D2850D31900E66C57 /* Debug */ = {
+		FF7CC6DC2852286B00E66C57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +205,7 @@
 			};
 			name = Debug;
 		};
-		FF7CC68E2850D31900E66C57 /* Release */ = {
+		FF7CC6DD2852286B00E66C57 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -280,14 +259,14 @@
 			};
 			name = Release;
 		};
-		FF7CC6902850D31900E66C57 /* Debug */ = {
+		FF7CC6DF2852286B00E66C57 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PanelGame.swift/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PanelGame/Preview Content\"";
 				DEVELOPMENT_TEAM = 3H6C67VURA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -301,7 +280,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.jinkirino.PanelGame-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.jinkirino.PanelGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -309,14 +288,14 @@
 			};
 			name = Debug;
 		};
-		FF7CC6912850D31900E66C57 /* Release */ = {
+		FF7CC6E02852286B00E66C57 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PanelGame.swift/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PanelGame/Preview Content\"";
 				DEVELOPMENT_TEAM = 3H6C67VURA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -330,7 +309,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.jinkirino.PanelGame-swift";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.jinkirino.PanelGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -341,25 +320,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FF7CC67C2850D31600E66C57 /* Build configuration list for PBXProject "PanelGame.swift" */ = {
+		FF7CC6CB2852286800E66C57 /* Build configuration list for PBXProject "PanelGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FF7CC68D2850D31900E66C57 /* Debug */,
-				FF7CC68E2850D31900E66C57 /* Release */,
+				FF7CC6DC2852286B00E66C57 /* Debug */,
+				FF7CC6DD2852286B00E66C57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FF7CC68F2850D31900E66C57 /* Build configuration list for PBXNativeTarget "PanelGame.swift" */ = {
+		FF7CC6DE2852286B00E66C57 /* Build configuration list for PBXNativeTarget "PanelGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FF7CC6902850D31900E66C57 /* Debug */,
-				FF7CC6912850D31900E66C57 /* Release */,
+				FF7CC6DF2852286B00E66C57 /* Debug */,
+				FF7CC6E02852286B00E66C57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FF7CC6792850D31600E66C57 /* Project object */;
+	rootObject = FF7CC6C82852286800E66C57 /* Project object */;
 }
