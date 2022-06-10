@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    // .fixed: グリッドのサイズを固定で設定
-    @State private var columns: [GridItem] = Array(repeating: .init(.fixed(120)), count: 3)
+    // .flexible グリッドのサイズを可変長
+    @State private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
 
     init() {
             let appearance = UINavigationBarAppearance()
