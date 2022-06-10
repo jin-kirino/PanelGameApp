@@ -11,12 +11,24 @@ struct ContentView: View {
     // .fixed: グリッドのサイズを固定で設定
     @State private var columns: [GridItem] = Array(repeating: .init(.fixed(120)), count: 3)
 
+    init() {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            // 黒を指定
+            appearance.backgroundColor = UIColor.black
+            // 文字色　白
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        }
+
     var body: some View {
 
         NavigationView {
             ZStack {
                 // 画面いっぱい真っ黒
-                Color.gray
+                Color.black
                     .ignoresSafeArea()
                     // 幅が指定通りで高さがView要素に応じて広がる
                     // (colums: [GridItem]配列を渡す, alignment: 行の配置を.center .top .bottom で指定, spacing: 行の間隔)
@@ -36,7 +48,7 @@ struct ContentView: View {
                         }// ForEach
                     }// LazyVGrid
             }// ZStack
-            .navigationTitle("パネルゲーム").foregroundColor(.white)
+            .navigationBarTitle("パネルゲーム")
         }// NavigationView
     }// body
 }// ContentView
