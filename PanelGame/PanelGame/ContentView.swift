@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     // .flexible グリッドのサイズを可変長
-    @State private var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
+    @State private var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 120, maximum: 130)), count: 3)
 
     init() {
             let appearance = UINavigationBarAppearance()
@@ -47,6 +47,8 @@ struct ContentView: View {
                             }// ZStack
                         }// ForEach
                     }// LazyVGrid
+                    // LazyVGridの周りを
+                    .padding()
             }// ZStack
             .navigationBarTitle("パネルゲーム")
         }// NavigationView
@@ -58,5 +60,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-// タイトルの文字色を白にするには？
