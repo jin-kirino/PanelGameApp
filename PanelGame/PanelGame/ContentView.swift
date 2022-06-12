@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    // .flexible グリッドのサイズを可変長
+    // .flexible グリッドのサイズを可変長(minimum: 最低120, maximum: 最高130)どんだけデバイスが変わってもこのルールは守る
     @State private var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 120, maximum: 130)), count: 3)
 
     init() {
+            // UINavigationBarAppearanceを使ってnavigationTitleをカスタマイズ
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            // 黒を指定
-            appearance.backgroundColor = UIColor.black
-            // 文字色　白
+            // 背景に黒を指定
+            appearance.backgroundColor = .black
+            // 文字色に白を指定
             appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
             appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
             UINavigationBar.appearance().standardAppearance = appearance
@@ -24,7 +25,6 @@ struct ContentView: View {
         }
 
     var body: some View {
-
         NavigationView {
             ZStack {
                 // 画面いっぱい真っ黒
@@ -47,7 +47,7 @@ struct ContentView: View {
                             }// ZStack
                         }// ForEach
                     }// LazyVGrid
-                    // LazyVGridの周りを
+                    // LazyVGridの周りを可変長で空白指定
                     .padding()
             }// ZStack
             .navigationBarTitle("パネルゲーム")
@@ -60,3 +60,21 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+// @State private var ShowAlert: Bool = false
+
+// 犬が勝ってるかチェック→「◯の勝利！」の部分に犬入れる
+// 猫が勝ってるかチェック→「◯の勝利！」の部分に猫入れる
+// まだ勝利が確定してない→全部のパネルが選択されてるか？== 配列の値に空（””）があるのか確認
+// A:まだ全部選択されていない（=まだ空の値（””）がある）→ゲーム継続
+// B:もう全部選択された(=空の値（””）はない）→引き分けのメッセージをセットしてゲーム終了
+
+// 勝利条件が満たされていたらtrue、まだ決着がついていなかったらfalse
+// 縦(036,147,258)に揃っているか確認→ダイアログ表示
+// 横(012,345,678)に揃っているか確認→ダイアログ表示
+// 斜め(048,246)に揃っているか確認→ダイアログ表示
+// 全パネルが選択されても揃わなかった確認→ダイアログ表示
+
+// 勝利条件が確定したら、Alertメッセージとゲーム終了をセットする → 確定してたら「◯の勝利！」してなかったら「引き分け」をアラートのTextに返す
+// →アラートのダイアログにこの配列の引数を入力してアラートメッセージ（ダイアログ）を表示させる
+// ↑入力パラメータ：パネルを管理する配列
