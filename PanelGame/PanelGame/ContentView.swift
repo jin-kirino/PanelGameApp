@@ -45,7 +45,7 @@ struct ContentView: View {
                                     .frame(width: 115, height: 115)
                                 // パネル１個１個
 //                                Text(moves[number])
-                                Text("🐶")
+//                                Text("🐶")
                             }// ZStack
                         }// ForEach
                     }// LazyVGrid
@@ -55,6 +55,8 @@ struct ContentView: View {
             .navigationBarTitle("パネルゲーム")
         }// NavigationView
         .onAppear {
+            moves[0] = "🐶"
+            moves[2] = "🐱"
         }// onAppear
     }// body
 }// ContentView
