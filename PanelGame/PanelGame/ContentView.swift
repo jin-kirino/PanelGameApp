@@ -35,7 +35,7 @@ struct ContentView: View {
                     // 幅が指定通りで高さがView要素に応じて広がる
                     // (colums: [GridItem]配列を渡す, alignment: 行の配置を.center .top .bottom で指定, spacing: 行の間隔)
                     LazyVGrid(columns: columns, alignment: .center, spacing: 15) {
-                        ForEach((0...8), id: \.self) { number in
+                        ForEach((0..<moves.count), id: \.self) { number in
                             ZStack {
                                 // 円の半径
                                 RoundedRectangle(cornerRadius: 10)
@@ -44,7 +44,11 @@ struct ContentView: View {
                                 // フレームのサイズ指定
                                     .frame(width: 115, height: 115)
                                 // パネル１個１個
-//                                Text(moves[number])
+                                Text(moves[number])
+                                    //
+                                    .onTapGesture {
+                                        moves[number] = "🐶"
+                                    }
 //                                Text("🐶")
                             }// ZStack
                         }// ForEach
