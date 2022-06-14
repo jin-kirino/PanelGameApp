@@ -45,12 +45,13 @@ struct ContentView: View {
                                     .frame(width: 115, height: 115)
                                 // パネル１個１個
                                 Text(moves[number])
-                                    //
-                                    .onTapGesture {
-                                        moves[number] = "🐶"
-                                    }
-//                                Text("🐶")
+                                // パネル全体
+                                Spacer()
                             }// ZStack
+                            // タップされたら「タップされたよ」
+                            .onTapGesture {
+                                print("タップされたよ")
+                            }
                         }// ForEach
                     }// LazyVGrid
                     // LazyVGridの周りを可変長で空白指定
