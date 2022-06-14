@@ -10,6 +10,8 @@ import SwiftUI
 struct ContentView: View {
     // .flexible グリッドのサイズを可変長(minimum: 最低120, maximum: 最高130)どんだけデバイスが変わってもこのルールは守る
     @State private var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 120, maximum: 130)), count: 3)
+    // 9個のパネルを配列で管理する
+    @State private var moves: [String] = Array(repeating: "", count: 9)
 
     init() {
             // UINavigationBarAppearanceを使ってnavigationTitleをカスタマイズ
@@ -41,9 +43,9 @@ struct ContentView: View {
                                     .fill(Color.white)
                                 // フレームのサイズ指定
                                     .frame(width: 115, height: 115)
-                                // 分かりやすいようにナンバリング
-                                Text("\(number)")
-                                    .foregroundColor(.blue)
+                                // パネル１個１個
+//                                Text(moves[number])
+                                Text("🐶")
                             }// ZStack
                         }// ForEach
                     }// LazyVGrid
@@ -52,6 +54,8 @@ struct ContentView: View {
             }// ZStack
             .navigationBarTitle("パネルゲーム")
         }// NavigationView
+        .onAppear {
+        }// onAppear
     }// body
 }// ContentView
 
