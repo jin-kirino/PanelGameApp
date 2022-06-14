@@ -50,7 +50,7 @@ struct ContentView: View {
                             }// ZStack
                             // タップされたら「タップされたよ」
                             .onTapGesture {
-                                print("タップされたよ")
+                               moves[number] = "🐶"
                             }
                         }// ForEach
                     }// LazyVGrid
@@ -59,10 +59,10 @@ struct ContentView: View {
             }// ZStack
             .navigationBarTitle("パネルゲーム")
         }// NavigationView
-        .onAppear {
-            moves[0] = "🐶"
-            moves[2] = "🐱"
-        }// onAppear
+//        .onAppear {
+//            moves[0] = "🐶"
+//            moves[2] = "🐱"
+//        }// onAppear
     }// body
 }// ContentView
 
