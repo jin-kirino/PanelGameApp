@@ -14,55 +14,58 @@ struct ContentView: View {
     @State private var moves: [String] = Array(repeating: "", count: 9)
     // firstPlayerだったらtrue、secondPlayerだったらfalse
     @State private var firstPlayer: Bool = true
-
+    
     init() {
-            // UINavigationBarAppearanceを使ってnavigationTitleをカスタマイズ
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            // 背景に黒を指定
-            appearance.backgroundColor = .black
-            // 文字色に白を指定
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-            appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        }
-
+        // UINavigationBarAppearanceを使ってnavigationTitleをカスタマイズ
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        // 背景に黒を指定
+        appearance.backgroundColor = .black
+        // 文字色に白を指定
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
     var body: some View {
         NavigationView {
             ZStack {
                 // 画面いっぱい真っ黒
                 Color.black
                     .ignoresSafeArea()
-                    // 幅が指定通りで高さがView要素に応じて広がる
-                    // (colums: [GridItem]配列を渡す, alignment: 行の配置を.center .top .bottom で指定, spacing: 行の間隔)
-                    LazyVGrid(columns: columns, alignment: .center, spacing: 15) {
-                        ForEach((0..<moves.count), id: \.self) { number in
-                            ZStack {
-                                // 円の半径
-                                RoundedRectangle(cornerRadius: 10)
-                                // 塗りつぶしの色
-                                    .fill(Color.white)
-                                // フレームのサイズ指定
-                                    .frame(width: 115, height: 115)
-                                // パネル１個１個
-                                Text(moves[number])
-                                // パネル全体
-                                Spacer()
-                            }// ZStack
-                            // タップされた時
-                            .onTapGesture {
+                // 幅が指定通りで高さがView要素に応じて広がる
+                // (colums: [GridItem]配列を渡す, alignment: 行の配置を.center .top .bottom で指定, spacing: 行の間隔)
+                LazyVGrid(columns: columns, alignment: .center, spacing: 15) {
+                    ForEach((0..<moves.count), id: \.self) { number in
+                        ZStack {
+                            // 円の半径
+                            RoundedRectangle(cornerRadius: 10)
+                            // 塗りつぶしの色
+                                .fill(Color.white)
+                            // フレームのサイズ指定
+                                .frame(width: 115, height: 115)
+                            // パネル１個１個
+                            Text(moves[number])
+                            // パネル全体
+                            Spacer()
+                        }// ZStack
+                        // タップされた時
+                        .onTapGesture {
+                            if moves[number] == "" {
+                                firstPlayer.toggle()
                                 if firstPlayer == true {
                                     moves[number] = "🐶"
                                 } else {
                                     moves[number] = "🐱"
-                                }// if else
-                                firstPlayer.toggle()
-                            }// onTapGesture
-                        }// ForEach
-                    }// LazyVGrid
-                    // LazyVGridの周りを可変長で空白指定
-                    .padding()
+                                }
+                                print("タップされてる")
+                            }// if else
+                        }// onTapGesture
+                    }// ForEach
+                }// LazyVGrid
+                // LazyVGridの周り空白を可変長で指定
+                .padding()
             }// ZStack
             .navigationBarTitle("パネルゲーム")
         }// NavigationView
