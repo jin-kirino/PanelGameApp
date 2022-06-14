@@ -12,6 +12,8 @@ struct ContentView: View {
     @State private var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 120, maximum: 130)), count: 3)
     // 9個のパネルを配列で管理する
     @State private var moves: [String] = Array(repeating: "", count: 9)
+    // firstPlayerだったらtrue、secondPlayerだったらfalse
+    @State private var firstPlayer: Bool = true
 
     init() {
             // UINavigationBarAppearanceを使ってnavigationTitleをカスタマイズ
@@ -48,10 +50,15 @@ struct ContentView: View {
                                 // パネル全体
                                 Spacer()
                             }// ZStack
-                            // タップされたら「タップされたよ」
+                            // タップされた時
                             .onTapGesture {
-                               moves[number] = "🐶"
-                            }
+                                if firstPlayer == true {
+                                    moves[number] = "🐶"
+                                } else {
+                                    moves[number] = "🐱"
+                                }// if else
+                                firstPlayer.toggle()
+                            }// onTapGesture
                         }// ForEach
                     }// LazyVGrid
                     // LazyVGridの周りを可変長で空白指定
@@ -59,10 +66,6 @@ struct ContentView: View {
             }// ZStack
             .navigationBarTitle("パネルゲーム")
         }// NavigationView
-//        .onAppear {
-//            moves[0] = "🐶"
-//            moves[2] = "🐱"
-//        }// onAppear
     }// body
 }// ContentView
 
