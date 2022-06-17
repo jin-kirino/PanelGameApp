@@ -16,7 +16,7 @@ struct ContentView: View {
     @State private var firstPlayer: Bool = true
     // アラートの表示を管理する
     @State private var showingAlert: Bool = false
-    
+
     init() {
         // UINavigationBarAppearanceを使ってnavigationTitleをカスタマイズ
         let appearance = UINavigationBarAppearance()
@@ -29,7 +29,7 @@ struct ContentView: View {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
-    
+
     // 勝利条件が確定したら、Alertメッセージとゲーム終了をセットする
     // 入力パラメータ：パネルを管理する配列
     private func setWinner(_ panels: [String]) -> String {
@@ -39,29 +39,32 @@ struct ContentView: View {
         if firstPlayer == true {
             // 勝利が確定しているのでAlertのメッセージをセット
             dialog = "プレイヤー🐶の勝利!!!"
-            // ゲームが終了しているのでゲーム終了をセット
+            // ゲームが終了しているのでゲーム終了をセット→アラートを表示
+            showingAlert.toggle()
         } else if firstPlayer == false {
             // プレイヤーが"😸"の場合に勝利が確定しているのかチェック
             // 勝利が確定しているのでAlertのメッセージをセット
             dialog = "勝者\nプレイヤー🐱の勝利!!!"
-            // ゲームが終了しているのでゲーム終了をセット
+            // ゲームが終了しているのでゲーム終了をセット→アラートを表示
+            showingAlert.toggle()
             // どのプレイヤーも勝利が確定していないとき
         } else {
             // すべてのパネルが選択されているのか？を確認したい
             // containsでパネル（配列）の値に空（""）があるのかを確認する。
-            // これで選択されていないパネルがあることがわかる。
-            if moves.contains("") {
+            // 空のパネルがあったらゲーム続行
+            if moves.contains("") == true {
             } else {
                 // すべてのパネルが選択済みなら
                 // 引き分けのメッセージをセット
                 dialog = "引き分け!!!"
                 // ゲームが終了しているのゲーム終了をセット
+                showingAlert.toggle()
             }
         }
         // Alertのメッセージを返却
         return dialog
     }// setWinner
-    
+
     // 勝利条件が確定しているのかチェックする
     // 入力パラメータ：パネルを管理する配列、チェックするプレイヤー（🐶or😸）
     private func checkPanels(_ panels: [String], player: String) -> Bool {
@@ -69,24 +72,24 @@ struct ContentView: View {
         // for strideを使ってパネルを3つずつチェックすることで、1行ずつチェックできる
         // その行の左から1列目、2列目、3列目が同じプレイヤーで揃っているかをチェック
         // 横方向に3つ揃っているので、勝利条件が確定（true）
-        
+
         // 縦方向で揃っていないかをチェック
         // パネルの0,1,2番目でループすると、縦方向のチェックができる
         // その列の1行目、2行目、3行目が同じプレイヤーで揃っているかをチェック
         // 縦方向に3つ揃っているので、勝利条件が確定（true）
-        
+
         // 左から右下斜めに同じプレイヤーで3つ揃っているのかをチェック
         // 揃っているので勝利条件が確定（true）
-        
+
         // 右から左下斜めに同じプレイヤーで3つ揃っているのかをチェック
         // 揃っているので勝利条件が確定（true）
-        
+
         // 3つ揃っていない場合は勝利条件が不確定（false）
-        
+
         // 勝利条件を管理するBool値を返却
         return false
     }// checkPanels
-    
+
     var body: some View {
         NavigationView {
             ZStack {
