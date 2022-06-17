@@ -36,19 +36,17 @@ struct ContentView: View {
         // 戻り値（アラートのmessageに表示する文字）
         var dialog: String = ""
         // プレイヤーが"🐶"の場合に勝利が確定しているのかチェック
-        if firstPlayer == true {
+
             // 勝利が確定しているのでAlertのメッセージをセット
-            dialog = "プレイヤー🐶の勝利!!!"
+//            dialog = "プレイヤー🐶の勝利!!!"
             // ゲームが終了しているのでゲーム終了をセット→アラートを表示
-            showingAlert.toggle()
-        } else if firstPlayer == false {
+
             // プレイヤーが"😸"の場合に勝利が確定しているのかチェック
             // 勝利が確定しているのでAlertのメッセージをセット
-            dialog = "勝者\nプレイヤー🐱の勝利!!!"
+//            dialog = "勝者\nプレイヤー🐱の勝利!!!"
             // ゲームが終了しているのでゲーム終了をセット→アラートを表示
-            showingAlert.toggle()
             // どのプレイヤーも勝利が確定していないとき
-        } else {
+
             // すべてのパネルが選択されているのか？を確認したい
             // containsでパネル（配列）の値に空（""）があるのかを確認する。
             // 空のパネルがあったらゲーム続行
@@ -57,9 +55,8 @@ struct ContentView: View {
                 // すべてのパネルが選択済みなら
                 // 引き分けのメッセージをセット
                 dialog = "引き分け!!!"
-                // ゲームが終了しているのゲーム終了をセット
+                // ゲームが終了しているのゲーム終了をセット→アラートを表示
                 showingAlert.toggle()
-            }
         }
         // Alertのメッセージを返却
         return dialog
@@ -75,10 +72,10 @@ struct ContentView: View {
         for _ in stride(from: 0, through: 2, by: 1) {
         }
         // 3,4,5
-        for _ in stride(from: 3, through: 5, by: 1){
+        for _ in stride(from: 3, through: 5, by: 1) {
         }
         // 6,7,8
-        for _ in stride(from: 6, through: 8, by: 1){
+        for _ in stride(from: 6, through: 8, by: 1) {
         }
         // 横方向に3つ揃っているので、勝利条件が確定（true）
 
@@ -93,7 +90,6 @@ struct ContentView: View {
         }
         // 2,5,8
         for _ in stride(from: 2, through: 8, by: 3) {
-            
         }
         // 縦方向に3つ揃っているので、勝利条件が確定（true）
 
@@ -146,6 +142,7 @@ struct ContentView: View {
                                     moves[number] = "🐱"
                                 }
                                 print("タップされてる")
+                                setWinner(moves)
                             }// if else
                         }// onTapGesture
                     }// ForEach
@@ -170,3 +167,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+// タップされた時に揃っているか確認する
+// ２個目は勝利しているかをチェックする
+//
