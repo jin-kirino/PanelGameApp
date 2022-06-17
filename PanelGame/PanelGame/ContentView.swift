@@ -154,7 +154,8 @@ struct ContentView: View {
         }// NavigationView
         // アラートを表示
         .alert("勝者", isPresented: $showingAlert) {
-            Button("リトライ！") { }
+            // リトライボタンを押したら新しいゲームが表示される
+            Button("もう一度！") { }
         } message: {
             // これにちゃんと入力して、どっちが勝ったかを表示させるor引き分け
             Text(setWinner(_: moves))
