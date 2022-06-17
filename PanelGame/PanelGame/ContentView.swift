@@ -71,21 +71,45 @@ struct ContentView: View {
         // 横方向で揃っていないかをチェック
         // for strideを使ってパネルを3つずつチェックすることで、1行ずつチェックできる
         // その行の左から1列目、2列目、3列目が同じプレイヤーで揃っているかをチェック
+        // 0,1,2
+        for _ in stride(from: 0, through: 2, by: 1) {
+        }
+        // 3,4,5
+        for _ in stride(from: 3, through: 5, by: 1){
+        }
+        // 6,7,8
+        for _ in stride(from: 6, through: 8, by: 1){
+        }
         // 横方向に3つ揃っているので、勝利条件が確定（true）
 
         // 縦方向で揃っていないかをチェック
         // パネルの0,1,2番目でループすると、縦方向のチェックができる
         // その列の1行目、2行目、3行目が同じプレイヤーで揃っているかをチェック
+        // 0,3,6
+        for _ in stride(from: 0, through: 8, by: 3) {
+        }
+        // 1,4,7
+        for _ in stride(from: 1, through: 8, by: 3) {
+        }
+        // 2,5,8
+        for _ in stride(from: 2, through: 8, by: 3) {
+            
+        }
         // 縦方向に3つ揃っているので、勝利条件が確定（true）
 
         // 左から右下斜めに同じプレイヤーで3つ揃っているのかをチェック
+        // 0,4,8
+        for _ in stride(from: 0, through: 8, by: 4) {
+        }
         // 揃っているので勝利条件が確定（true）
 
         // 右から左下斜めに同じプレイヤーで3つ揃っているのかをチェック
+        // 2,4,6
+        for _ in stride(from: 2, through: 8, by: 2) {
+        }
         // 揃っているので勝利条件が確定（true）
 
         // 3つ揃っていない場合は勝利条件が不確定（false）
-
         // 勝利条件を管理するBool値を返却
         return false
     }// checkPanels
