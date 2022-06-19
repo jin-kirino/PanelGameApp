@@ -16,7 +16,7 @@ struct ContentView: View {
     @State private var firstPlayer: Bool = true
     // アラートの表示を管理する
     @State private var showingAlert: Bool = false
-    
+
     init() {
         // UINavigationBarAppearanceを使ってnavigationTitleをカスタマイズ
         let appearance = UINavigationBarAppearance()
@@ -29,7 +29,7 @@ struct ContentView: View {
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
-    
+
     // 勝利条件が確定したら、Alertメッセージとゲーム終了をセットする
     // 入力パラメータ：パネルを管理する配列
     private func setWinner(_ panels: [String]) -> String {
@@ -64,7 +64,7 @@ struct ContentView: View {
         // Alertのメッセージを返却
         return dialog
     }// setWinner
-    
+
     // 勝利条件が確定しているのかチェックする
     // 入力パラメータ：パネルを管理する配列、チェックするプレイヤー（🐶or😸）
     private func checkPanels(_ panels: [String], player: String) -> Bool {
@@ -111,15 +111,17 @@ struct ContentView: View {
         //        // 3つ揃っていない場合は勝利条件が不確定（false）
         //        // 勝利条件を管理するBool値を返却
         //        return false
-        
+
         // 横
-        if panels[0] == player && panels[1] == player && panels[2] == player {
+        let yoko1 = 0
+        let yoko2 = 3
+        let yoko3 = 6
+
+        if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
             return true
-        } else if panels[0] == player && panels[1] == player && panels[2] == player {
+        } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {
             return true
-        } else if panels[3] == player && panels[4] == player && panels[5] == player {
-            return true
-        } else if panels[6] == player && panels[7] == player && panels[8] == player {
+        } else if panels[yoko3] == player && panels[yoko3 + 1] == player && panels[yoko3 + 2] == player {
             return true
             // 縦
         } else if panels[0] == player && panels[3] == player && panels[6] == player {
@@ -136,6 +138,7 @@ struct ContentView: View {
         }
         return false
     }// checkPanels
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -168,8 +171,8 @@ struct ContentView: View {
                                     moves[number] = "🐱"
                                 }
                                 print("タップされてる")
-                                // 同じ関数??????????ここでアラートを表示できればいい
-                                setWinner(_: moves)
+                                // ここでアラートを表示できればいい「！戻り値を使う！」
+                                setWinner(moves)
                             }// if else
                         }// onTapGesture
                     }// ForEach
@@ -197,4 +200,4 @@ struct ContentView_Previews: PreviewProvider {
 
 // タップされた時に揃っているか確認する
 // ２個目は勝利しているかをチェックする
-//
+// 戻り値を使う
