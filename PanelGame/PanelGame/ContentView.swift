@@ -116,6 +116,9 @@ struct ContentView: View {
         let yoko1 = 0
         let yoko2 = 3
         let yoko3 = 6
+        let tate0 = 0
+        let tate1 = 1
+        let tate2 = 2
 
         if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
             return true
@@ -124,11 +127,11 @@ struct ContentView: View {
         } else if panels[yoko3] == player && panels[yoko3 + 1] == player && panels[yoko3 + 2] == player {
             return true
             // 縦
-        } else if panels[0] == player && panels[3] == player && panels[6] == player {
+        } else if panels[tate0] == player && panels[tate0 + 3] == player && panels[tate0 + 6] == player {
             return true
-        } else if panels[1] == player && panels[4] == player && panels[7] == player {
+        } else if panels[tate1] == player && panels[tate1 + 3] == player && panels[tate1 + 6] == player {
             return true
-        } else if panels[2] == player && panels[5] == player && panels[8] == player {
+        } else if panels[tate2] == player && panels[tate2 + 3] == player && panels[tate2 + 6] == player {
             return true
             // 斜め
         } else if panels[0] == player && panels[4] == player && panels[8] == player {
