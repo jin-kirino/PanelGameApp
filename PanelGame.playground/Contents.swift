@@ -5,33 +5,33 @@ var moves: [String] = Array(repeating: "", count: 9)
 
 private func checkPanels(_ panels: [String], player: String) -> Bool {
     // 横
-    let yoko1 = 0
-    let yoko2 = 3
-    let yoko3 = 6
-//
+        let yoko1 = 0
+        let yoko2 = 3
+        let yoko3 = 6
     
-    
-    for number in 0...2 {
-        print("number1:\(number)")
-        if panels[yoko1 + number] == player {
-            print("yoko + number:\(yoko1 + number)")
-            return true
-        } else if panels[yoko2 + number] == player {
+        for number in 0...2 {
+            print("number1:\(number)")
+            if panels[yoko1 + number] == player {
                 return true
-        } else if panels[yoko3 + number] == player {
-            return true
+            } else if panels[yoko2 + number] == player {
+                return true
+            } else if panels[yoko3 + number] == player {
+                return true
+            }
+            return false
         }
-    }
+        
     
-//    if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
-//        return true
-//    } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {
-//        return true
-//    } else if panels[yoko3] == player && panels[yoko3 + 1] == player && panels[yoko3 + 2] == player {
-//        return true
     
-//    }
-
+    //    if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
+    //        return true
+    //    } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {
+    //        return true
+    //    } else if panels[yoko3] == player && panels[yoko3 + 1] == player && panels[yoko3 + 2] == player {
+    //        return true
+    
+    //    }
+    
     
     
     // 縦
@@ -73,3 +73,6 @@ let fff = checkPanels(moves, player: "🐱")
 // 1.2.3を一つの変数にまとめるためにfor stride
 // まとめた変数を
 
+for num in 0...2 {
+    print("num:\(num)")
+}
