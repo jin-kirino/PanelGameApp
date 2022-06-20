@@ -68,50 +68,6 @@ struct ContentView: View {
     // 勝利条件が確定しているのかチェックする
     // 入力パラメータ：パネルを管理する配列、チェックするプレイヤー（🐶or😸）
     private func checkPanels(_ panels: [String], player: String) -> Bool {
-        //        // 横方向で揃っていないかをチェック
-        //        // for strideを使ってパネルを3つずつチェックすることで、1行ずつチェックできる
-        //        // その行の左から1列目、2列目、3列目が同じプレイヤーで揃っているかをチェック
-        //        // 0,1,2
-        //        for _ in stride(from: 0, through: 2, by: 1) {
-        //        }
-        //        // 3,4,5
-        //        for _ in stride(from: 3, through: 5, by: 1) {
-        //        }
-        //        // 6,7,8
-        //        for _ in stride(from: 6, through: 8, by: 1) {
-        //        }
-        //        // 横方向に3つ揃っているので、勝利条件が確定（true）
-        //
-        //        // 縦方向で揃っていないかをチェック
-        //        // パネルの0,1,2番目でループすると、縦方向のチェックができる
-        //        // その列の1行目、2行目、3行目が同じプレイヤーで揃っているかをチェック
-        //        // 0,3,6
-        //        for _ in stride(from: 0, through: 8, by: 3) {
-        //        }
-        //        // 1,4,7
-        //        for _ in stride(from: 1, through: 8, by: 3) {
-        //        }
-        //        // 2,5,8
-        //        for _ in stride(from: 2, through: 8, by: 3) {
-        //        }
-        //        // 縦方向に3つ揃っているので、勝利条件が確定（true）
-        //
-        //        // 左から右下斜めに同じプレイヤーで3つ揃っているのかをチェック
-        //        // 0,4,8
-        //        for _ in stride(from: 0, through: 8, by: 4) {
-        //        }
-        //        // 揃っているので勝利条件が確定（true）
-        //
-        //        // 右から左下斜めに同じプレイヤーで3つ揃っているのかをチェック
-        //        // 2,4,6
-        //        for _ in stride(from: 2, through: 8, by: 2) {
-        //        }
-        //        // 揃っているので勝利条件が確定（true）
-        //
-        //        // 3つ揃っていない場合は勝利条件が不確定（false）
-        //        // 勝利条件を管理するBool値を返却
-        //        return false
-
         // 横
         let yoko1 = 0
         let yoko2 = 3
@@ -120,18 +76,44 @@ struct ContentView: View {
         let tate1 = 1
         let tate2 = 2
 
+//        // 0,1,2
+//        for number in 0...2 {
+//            print("number1:\(number)")
+//            if panels[yoko1 + number] == player {
+//                print("1:\(panels[yoko1 + number])")
+//                return true
+//            }
+//        }// for in
+//        // 3,4,5
+//        for number in 0...2 {
+//            if panels[yoko2 + number] == player {
+//                print("2:\(panels[yoko2 + number])")
+//                return true
+//            }
+//        }// for in
+//        // 6,7,8
+//        for number in 0...2 {
+//            if panels[yoko3 + number] == player {
+//                print("3:\(panels[yoko3 + number])")
+//                return true
+//            }
+//            return false
+//        }// for in
+
         for number in 0...2 {
-            print("number1:\(number)")
-            if panels[yoko1 + number] == player {
+            let aaa = panels[yoko1 + number]
+            let bbb = panels[yoko2 + number]
+            let ccc = panels[yoko3 + number]
+            if aaa == player {
                 return true
-            } else if panels[yoko2 + number] == player {
+            } else if bbb == player {
                 return true
-            } else if panels[yoko3 + number] == player {
+            } else if ccc == player {
+                
                 return true
             }
             return false
-        }// for in
-        
+        }
 //        if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
 //                return true
 //            } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {
@@ -189,7 +171,7 @@ struct ContentView: View {
                                 }
                                 print("タップされてる")
                                 // ここでアラートを表示できればいい「！戻り値を使う！」
-                                setWinner(moves)
+                                setWinner(_: moves)
                             }// if else
                         }// onTapGesture
                     }// ForEach
@@ -201,7 +183,9 @@ struct ContentView: View {
         }// NavigationView
         .alert("勝者", isPresented: $showingAlert) {
             // リトライボタンを押したら新しいゲームが表示される
-            Button("もう一度！") { }
+            Button("もう一度！") {
+                moves = [""]
+            }
         } message: {
             // これにちゃんと入力して、どっちが勝ったかを表示させるor引き分け
             Text(setWinner(_: moves))
