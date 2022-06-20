@@ -120,14 +120,28 @@ struct ContentView: View {
         let tate1 = 1
         let tate2 = 2
 
-        if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
-            return true
-        } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {
-            return true
-        } else if panels[yoko3] == player && panels[yoko3 + 1] == player && panels[yoko3 + 2] == player {
-            return true
+        for number in 0...2 {
+            print("number1:\(number)")
+            if panels[yoko1 + number] == player {
+                return true
+            } else if panels[yoko2 + number] == player {
+                return true
+            } else if panels[yoko3 + number] == player {
+                return true
+            }
+            return false
+        }// for in
+        
+//        if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
+//                return true
+//            } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {
+//                return true
+//            } else if panels[yoko3] == player && panels[yoko3 + 1] == player && panels[yoko3 + 2] == player {
+//                return true
+//
+//            } else
             // 縦
-        } else if panels[tate0] == player && panels[tate0 + 3] == player && panels[tate0 + 6] == player {
+        if panels[tate0] == player && panels[tate0 + 3] == player && panels[tate0 + 6] == player {
             return true
         } else if panels[tate1] == player && panels[tate1 + 3] == player && panels[tate1 + 6] == player {
             return true

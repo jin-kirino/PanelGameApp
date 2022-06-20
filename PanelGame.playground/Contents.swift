@@ -21,8 +21,6 @@ private func checkPanels(_ panels: [String], player: String) -> Bool {
             return false
         }
         
-    
-    
     //    if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
     //        return true
     //    } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {
@@ -75,4 +73,16 @@ let fff = checkPanels(moves, player: "🐱")
 
 for num in 0...2 {
     print("num:\(num)")
+}
+
+for index in 0...2 {
+    print("aaa:\(moves[index])")
+}
+
+let aaa1 = 1
+let aaa2 = 2
+let aaa3 = 3
+
+for mike in 0...2 {
+    print("mike:\(moves[aaa1 + mike])")
 }
