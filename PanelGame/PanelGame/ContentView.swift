@@ -100,36 +100,65 @@ struct ContentView: View {
 //            return false
 //        }// for in
 
-        for number in 0...2 {
-            let aaa = panels[yoko1 + number]
-            let bbb = panels[yoko2 + number]
-            let ccc = panels[yoko3 + number]
+//        for number in 0...2 {
+//            let aaa = panels[yoko1 + number]
+//            let bbb = panels[yoko2 + number]
+//            let ccc = panels[yoko3 + number]
+//            if aaa == player {
+//                return true
+//            } else if bbb == player {
+//                return true
+//            } else if ccc == player {
+//                return true
+//            }
+//            return false
+//        }
+        for mike in 0...2 {
+            let aaa = moves[yoko1 + mike]
+            print("aaa:\(aaa)")
+//            let bbb = moves[yoko2 + mike]
+//            print("bbb:\(bbb)")
+//            let ccc = moves[yoko3 + mike]
+//            print("ccc:\(ccc)")
             if aaa == player {
                 return true
-            } else if bbb == player {
-                return true
-            } else if ccc == player {
-                
-                return true
+//            } else if bbb == player {
+//                return true
+//            } else if ccc == player {
+//                return true
             }
             return false
         }
+//        for mike2 in 0...2 {
+//            let bbb = moves[yoko2 + mike2]
+//            print("bbb:\(bbb)")
+//            if bbb == player {
+//                return true
+//            }
+//        }
+//        for mike3 in 0...2 {
+//            let ccc = moves[yoko3 + mike3]
+//            print("ccc:\(ccc)")
+//            if ccc == player {
+//                return true
+//            }
+//        }
+
 //        if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
 //                return true
-//            } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {
+//        } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {
 //                return true
-//            } else if panels[yoko3] == player && panels[yoko3 + 1] == player && panels[yoko3 + 2] == player {
+//        } else if panels[yoko3] == player && panels[yoko3 + 1] == player && panels[yoko3 + 2] == player {
 //                return true
-//
-//            } else
-            // 縦
+//        } else
+        // 縦
         if panels[tate0] == player && panels[tate0 + 3] == player && panels[tate0 + 6] == player {
             return true
         } else if panels[tate1] == player && panels[tate1 + 3] == player && panels[tate1 + 6] == player {
             return true
         } else if panels[tate2] == player && panels[tate2 + 3] == player && panels[tate2 + 6] == player {
             return true
-            // 斜め
+        // 斜め
         } else if panels[0] == player && panels[4] == player && panels[8] == player {
             return true
         } else if panels[2] == player && panels[4] == player && panels[6] == player {
@@ -162,16 +191,20 @@ struct ContentView: View {
                         }// ZStack
                         // タップされた時
                         .onTapGesture {
+                            // 空欄のパネルがタップされたら
                             if moves[number] == "" {
+                                // 🐶と🐱をチェンジ
                                 firstPlayer.toggle()
                                 if firstPlayer == true {
+                                    // パネルに🐶を追加
                                     moves[number] = "🐶"
                                 } else {
+                                    // パネルに🐱を追加
                                     moves[number] = "🐱"
                                 }
-                                print("タップされてる")
+                                print("タップ")
                                 // ここでアラートを表示できればいい「！戻り値を使う！」
-                                setWinner(_: moves)
+                                _ = setWinner(_: moves)
                             }// if else
                         }// onTapGesture
                     }// ForEach
@@ -188,7 +221,7 @@ struct ContentView: View {
             }
         } message: {
             // これにちゃんと入力して、どっちが勝ったかを表示させるor引き分け
-            Text(setWinner(_: moves))
+            Text(setWinner(_:moves))
         }// alert
     }// body
 }// ContentView
@@ -202,3 +235,7 @@ struct ContentView_Previews: PreviewProvider {
 // タップされた時に揃っているか確認する
 // ２個目は勝利しているかをチェックする
 // 戻り値を使う
+
+// アラートを表示して「もう一度！」をタップしたら初期画面
+// タップした時にパネルの背景をオレンジに変更
+//

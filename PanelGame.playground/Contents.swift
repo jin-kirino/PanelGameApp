@@ -11,19 +11,28 @@ private func checkPanels(_ panels: [String], player: String) -> Bool {
     
     // +1,+2をfor文を使ってまとめる
     
-    for number in 0...2 {
-        let aaa = panels[yoko1 + number]
-        let bbb = panels[yoko2 + number]
-        let ccc = panels[yoko3 + number]
+    for mike in 0...2 {
+        let aaa = moves[yoko1 + mike]
+        print("aaa:\(aaa)")
         if aaa == player {
             return true
-        } else if bbb == player {
-            return true
-        } else if ccc == player {
+        }
+    }
+    for mike2 in 0...2 {
+        let bbb = moves[yoko2 + mike2]
+        print("bbb:\(bbb)")
+        if bbb == player {
             return true
         }
-        return false
     }
+    for mike3 in 0...2 {
+        let ccc = moves[yoko3 + mike3]
+        print("ccc:\(ccc)")
+        if ccc == player {
+            return true
+        }
+    }
+
     
     
     //    if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
@@ -62,39 +71,45 @@ private func checkPanels(_ panels: [String], player: String) -> Bool {
 //moves[4] = "🐶"
 //moves[8] = "🐶"
 //print(moves)
-//
-//moves[2] = "🐱"
-//moves[3] = "🐱"
-//moves[5] = "🐱"
-//print(moves)
 
-let ccc = checkPanels(moves, player: "🐶")
-//let ddd = checkPanels(moves, player: "🐱")
+moves[0] = "🐱"
+moves[1] = "🐱"
+moves[4] = "🐱"
+print(moves)
+
+//let ccc = checkPanels(moves, player: "🐶")
+let ddd = checkPanels(moves, player: "🐱")
 //let eee = checkPanels(moves, player: "🐶")
 //let fff = checkPanels(moves, player: "🐱")
 
 // 1.2.3を一つの変数にまとめるためにfor stride
 // まとめた変数をfor文で出力
 
-for num in 0...2 {
-    print("num:\(num)")
-}
+//for num in 0...2 {
+//    print("num:\(num)")
+//}
 
-for index in 0...2 {
-    print("index:\(moves[index])")
-}
+let aaa1 = 0
+let aaa2 = 3
+let aaa3 = 6
 
-
-let aaa1 = 1
-let aaa2 = 2
-let aaa3 = 3
-
-for mike in 0...2 {
-    print("mike:\(moves[aaa1 + mike])")
-    print("mike2:\(moves[aaa2 + mike])")
-    print("mike3:\(moves[aaa3 + mike])")
-}
-
+print("--------------------")
 moves[0] = "あ"
 moves[1] = "い"
 moves[2] = "う"
+moves[3] = "え"
+moves[4] = "お"
+moves[5] = "か"
+moves[6] = "き"
+moves[7] = "く"
+moves[8] = "け"
+
+for mike in 0...2 {
+    print("mike:\(moves[aaa1 + mike])")
+}
+for mike2 in 0...2 {
+    print("mike2:\(moves[aaa2 + mike2])")
+}
+for mike3 in 0...2 {
+    print("mike3\(moves[aaa3 + mike3])")
+}
