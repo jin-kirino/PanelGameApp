@@ -113,22 +113,22 @@ struct ContentView: View {
 //            }
 //            return false
 //        }
-        for mike in 0...2 {
-            let aaa = moves[yoko1 + mike]
-            print("aaa:\(aaa)")
+//        for mike in 0...2 {
+//            let aaa = moves[yoko1 + mike]
+//            print("aaa:\(aaa)")
 //            let bbb = moves[yoko2 + mike]
 //            print("bbb:\(bbb)")
 //            let ccc = moves[yoko3 + mike]
 //            print("ccc:\(ccc)")
-            if aaa == player {
-                return true
+//            if aaa == player {
+//                return true
 //            } else if bbb == player {
 //                return true
 //            } else if ccc == player {
 //                return true
-            }
-            return false
-        }
+//            }
+//            return false
+//        }
 //        for mike2 in 0...2 {
 //            let bbb = moves[yoko2 + mike2]
 //            print("bbb:\(bbb)")
@@ -144,6 +144,17 @@ struct ContentView: View {
 //            }
 //        }
 
+        for number in 0...2 {
+            if panels[yoko1 + number] == player && panels[yoko1 + number] == player && panels[yoko1 + number] == player {
+                return true
+            } else if panels[yoko2 + number] == player && panels[yoko2 + number] == player && panels[yoko2 + number] == player {
+                return true
+            } else if panels[yoko3 + number] == player && panels[yoko3 + number] == player && panels[yoko3 + number] == player {
+                return true
+            } else {
+                return false
+            }
+        }
 //        if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
 //                return true
 //        } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {

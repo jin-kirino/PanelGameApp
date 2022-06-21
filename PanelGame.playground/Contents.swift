@@ -11,30 +11,38 @@ private func checkPanels(_ panels: [String], player: String) -> Bool {
     
     // +1,+2をfor文を使ってまとめる
     
-    for mike in 0...2 {
-        let aaa = moves[yoko1 + mike]
-        print("aaa:\(aaa)")
-        if aaa == player {
-            return true
-        }
+//    for mike in 0...2 {
+//        let aaa = moves[yoko1 + mike]
+//        print("aaa:\(aaa)")
+//        if aaa == player {
+//            return true
+//        }
+//    }
+//    for mike2 in 0...2 {
+//        let bbb = moves[yoko2 + mike2]
+//        print("bbb:\(bbb)")
+//        if bbb == player {
+//            return true
+//        }
+//    }
+//    for mike3 in 0...2 {
+//        let ccc = moves[yoko3 + mike3]
+//        print("ccc:\(ccc)")
+//        if ccc == player {
+//            return true
+//        }
+//    }
+for number in 0...2 {
+    if panels[yoko1 + number] == player && panels[yoko1 + number] == player && panels[yoko1 + number] == player {
+        return true
+    } else if panels[yoko2 + number] == player && panels[yoko2 + number] == player && panels[yoko2 + number] == player {
+        return true
+    } else if panels[yoko3 + number] == player && panels[yoko3 + number] == player && panels[yoko3 + number] == player {
+        return true
+    } else {
+        return false
     }
-    for mike2 in 0...2 {
-        let bbb = moves[yoko2 + mike2]
-        print("bbb:\(bbb)")
-        if bbb == player {
-            return true
-        }
-    }
-    for mike3 in 0...2 {
-        let ccc = moves[yoko3 + mike3]
-        print("ccc:\(ccc)")
-        if ccc == player {
-            return true
-        }
-    }
-
-    
-    
+}
     //    if panels[yoko1] == player && panels[yoko1 + 1] == player && panels[yoko1 + 2] == player {
     //        return true
     //    } else if panels[yoko2] == player && panels[yoko2 + 1] == player && panels[yoko2 + 2] == player {
@@ -67,17 +75,17 @@ private func checkPanels(_ panels: [String], player: String) -> Bool {
     return false
 }
 
-//moves[0] = "🐶"
-//moves[4] = "🐶"
+//moves[6] = "🐶"
+moves[7] = "🐶"
 //moves[8] = "🐶"
 //print(moves)
 
-moves[0] = "🐱"
-moves[1] = "🐱"
-moves[4] = "🐱"
+//moves[0] = "🐱"
+//moves[1] = "🐱"
+//moves[4] = "🐱"
 print(moves)
 
-//let ccc = checkPanels(moves, player: "🐶")
+let ccc = checkPanels(moves, player: "🐶")
 let ddd = checkPanels(moves, player: "🐱")
 //let eee = checkPanels(moves, player: "🐶")
 //let fff = checkPanels(moves, player: "🐱")
@@ -111,5 +119,5 @@ for mike2 in 0...2 {
     print("mike2:\(moves[aaa2 + mike2])")
 }
 for mike3 in 0...2 {
-    print("mike3\(moves[aaa3 + mike3])")
+    print("mike:3\(moves[aaa3 + mike3])")
 }
