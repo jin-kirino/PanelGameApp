@@ -69,9 +69,9 @@ struct ContentView: View {
     // 入力パラメータ：パネルを管理する配列、チェックするプレイヤー（🐶or😸）
     private func checkPanels(_ panels: [String], player: String) -> Bool {
         // 横
-        let yoko1 = 0
-        let yoko2 = 3
-        let yoko3 = 6
+//        let yoko1 = 0
+//        let yoko2 = 3
+//        let yoko3 = 6
         let tate0 = 0
         let tate1 = 1
         let tate2 = 2
@@ -144,12 +144,19 @@ struct ContentView: View {
 //            }
 //        }
 
-        for number in 0...2 {
-            if panels[yoko1 + number] == player && panels[yoko1 + number] == player && panels[yoko1 + number] == player {
-                return true
-            } else if panels[yoko2 + number] == player && panels[yoko2 + number] == player && panels[yoko2 + number] == player {
-                return true
-            } else if panels[yoko3 + number] == player && panels[yoko3 + number] == player && panels[yoko3 + number] == player {
+//        for number in 0...2 {
+//            if panels[yoko1 + number] == player && panels[yoko1 + number] == player && panels[yoko1 + number] == player {
+//                return true
+//            } else if panels[yoko2 + number] == player && panels[yoko2 + number] == player && panels[yoko2 + number] == player {
+//                return true
+//            } else if panels[yoko3 + number] == player && panels[yoko3 + number] == player && panels[yoko3 + number] == player {
+//                return true
+//            } else {
+//                return false
+//            }
+//        }
+        for number in stride(from: 0, through: 8, by: 3) {
+            if panels[number] == player && panels[number + 1] == player && panels[number + 2] == player {
                 return true
             } else {
                 return false
