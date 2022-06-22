@@ -74,30 +74,13 @@ struct ContentView: View {
                 return true
             }
         }
-//        // 縦
-//        if panels[tate0] == player && panels[tate0 + 3] == player && panels[tate0 + 6] == player {
-//            return true
-//        } else if panels[tate1] == player && panels[tate1 + 3] == player && panels[tate1 + 6] == player {
-//            return true
-//        } else if panels[tate2] == player && panels[tate2 + 3] == player && panels[tate2 + 6] == player {
-//            return true
-//
-            for number in 0...2 {
-                if panels[number] == player && panels[number + 3] == player && panels[number + 6] == player {
-                    return true
-                }
+        // 縦
+        for number in 0...2 {
+            if panels[number] == player && panels[number + 3] == player && panels[number + 6] == player {
+                return true
             }
+        }
         // 斜め
-//        for number in stride(from: 0, through: 8, by: 4) {
-//            if panels[number] == player && panels[number] == player && panels[number] == player {
-//                return true
-//            }
-//        }
-//        for number in stride(from: 2, through: 6, by: 2) {
-//            if panels[number] == player && panels[number] == player && panels[number] == player {
-//                return true
-//            }
-//        }
         if panels[0] == player && panels[4] == player && panels[8] == player {
             return true
         } else if panels[2] == player && panels[4] == player && panels[6] == player {
@@ -156,7 +139,7 @@ struct ContentView: View {
         .alert("勝者", isPresented: $showingAlert) {
             // リトライボタンを押したら新しいゲームが表示される
             Button("もう一度！") {
-                moves = [""]
+                moves = Array(repeating: "", count: 9)
             }
         } message: {
             // これにちゃんと入力して、どっちが勝ったかを表示させるor引き分け
