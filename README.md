@@ -167,3 +167,10 @@ Part4
 //            }
 //        }
 
+// 縦
+ if panels[tate0] == player && panels[tate0 + 3] == player && panels[tate0 + 6] == player {
+//            return true
+//        } else if panels[tate1] == player && panels[tate1 + 3] == player && panels[tate1 + 6] == player {
+//            return true
+//        } else if panels[tate2] == player && panels[tate2 + 3] == player && panels[tate2 + 6] == player {
+//            return true
