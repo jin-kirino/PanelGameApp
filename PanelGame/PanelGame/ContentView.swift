@@ -16,6 +16,8 @@ struct ContentView: View {
     @State private var firstPlayer: Bool = true
     // アラートの表示を管理する
     @State private var showingAlert: Bool = false
+    // アラートのメッセージを管理する
+    @State private var alertMessage: String = ""
 
     init() {
         // UINavigationBarAppearanceを使ってnavigationTitleをカスタマイズ
@@ -102,12 +104,14 @@ struct ContentView: View {
                         ZStack {
                             // 円の半径
                             RoundedRectangle(cornerRadius: 10)
-                            // 塗りつぶしの色
-                                .fill(Color.white)
+                            // 塗りつぶしの色 三項演算子　値　？　trueの時　：　falseの時
+                                .fill(moves[number] == "" ? Color.white : Color.orange)
                             // フレームのサイズ指定
                                 .frame(width: 115, height: 115)
                             // パネル１個１個
                             Text(moves[number])
+                                // 文字の大きさ指定
+                                .font(.largeTitle)
                             // パネル全体
                             Spacer()
                         }// ZStack
@@ -115,18 +119,18 @@ struct ContentView: View {
                         .onTapGesture {
                             // 空欄のパネルがタップされたら
                             if moves[number] == "" {
-                                // 🐶と🐱をチェンジ
-                                firstPlayer.toggle()
                                 if firstPlayer == true {
-                                    // パネルに🐶を追加
-                                    moves[number] = "🐶"
+                                        // パネルに🐶を追加
+                                        moves[number] = "🐶"
                                 } else {
                                     // パネルに🐱を追加
                                     moves[number] = "🐱"
                                 }
+                                // 🐶と🐱をチェンジ
+                                firstPlayer.toggle()
                                 print("タップ")
                                 // ここでアラートを表示できればいい「！戻り値を使う！」
-                                _ = setWinner(_: moves)
+                                alertMessage = setWinner(_: moves)
                             }// if else
                         }// onTapGesture
                     }// ForEach
@@ -143,7 +147,7 @@ struct ContentView: View {
             }
         } message: {
             // これにちゃんと入力して、どっちが勝ったかを表示させるor引き分け
-            Text(setWinner(_:moves))
+            Text(alertMessage)
         }// alert
     }// body
 }// ContentView
