@@ -70,23 +70,24 @@ struct ContentView: View {
     // 勝利条件が確定しているのかチェックする
     // 入力パラメータ：パネルを管理する配列、チェックするプレイヤー（🐶or😸）
     private func checkPanels(_ panels: [String], player: String) -> Bool {
+        var check: Bool
         // 横
         for number in stride(from: 0, through: 8, by: 3) {
             if panels[number] == player && panels[number + 1] == player && panels[number + 2] == player {
-                return true
+                check = true
             }
         }
         // 縦
         for number in 0...2 {
             if panels[number] == player && panels[number + 3] == player && panels[number + 6] == player {
-                return true
+                check = true
             }
         }
         // 斜め
         if panels[0] == player && panels[4] == player && panels[8] == player {
-            return true
+            check = true
         } else if panels[2] == player && panels[4] == player && panels[6] == player {
-            return true
+            check = true
         }
         return false
     }// checkPanels
