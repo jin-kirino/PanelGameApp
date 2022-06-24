@@ -38,13 +38,13 @@ struct ContentView: View {
         // 戻り値（アラートのmessageに表示する文字）
         var dialog: String = ""
         // プレイヤーが"🐶"の場合に勝利が確定しているのかチェック
-        if checkPanels(moves, player: "🐶") == true {
+        if checkPanels(panels, player: "🐶") == true {
             // 勝利が確定しているのでAlertのメッセージをセット
             dialog = "プレイヤー🐶の勝利!!!"
             // ゲームが終了しているのでゲーム終了をセット→アラートを表示
             showingAlert.toggle()
             // プレイヤーが"😸"の場合に勝利が確定しているのかチェック
-        } else if checkPanels(moves, player: "🐱") == true {
+        } else if checkPanels(panels, player: "🐱") == true {
             // 勝利が確定しているのでAlertのメッセージをセット
             dialog = "勝者\nプレイヤー🐱の勝利!!!"
             // ゲームが終了しているのでゲーム終了をセット→アラートを表示
@@ -54,7 +54,7 @@ struct ContentView: View {
             // すべてのパネルが選択されているのか？を確認したい
             // containsでパネル（配列）の値に空（""）があるのかを確認する。
             // 空のパネルがあったらゲーム続行
-            if moves.contains("") == true {
+            if panels.contains("") == true {
             } else {
                 // すべてのパネルが選択済みなら
                 // 引き分けのメッセージをセット
